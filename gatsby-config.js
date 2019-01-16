@@ -2,12 +2,12 @@ const languages = require('./languages');
 
 module.exports = {
   siteMetadata: {
-    title: 'Overreacted',
+    title: 'Postorder',
     author: 'Dan Abramov',
-    description: 'Personal blog by Dan Abramov. I explain with words and code.',
-    siteUrl: 'https://overreacted.io',
+    description: 'Personal blog by Karthik Kalyanaraman. I de-mystify concepts and ideas by doing a post-order traversal on them.',
+    siteUrl: 'https://postorder.xyz',
     social: {
-      twitter: '@dan_abramov',
+      twitter: '@karthikkalyan90',
     },
   },
   pathPrefix: '/',
@@ -76,12 +76,12 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at overreacted.io. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at postorder.xyz. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `
 
                 let html = edge.node.html;
-                // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
+                // Hacky workaround for https://github.com/kakaly/postorder.xyz/issues/65
                 html = html
                   .replace(/href="\//g, `href="${siteUrl}/`)
                   .replace(/src="\//g, `src="${siteUrl}/`)
@@ -124,7 +124,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'Dan Abramov\'s Overreacted Blog RSS Feed',
+            title: 'Karthik Kalyanaraman\'s Postorder Blog RSS Feed',
           },
         ],
       },
@@ -132,8 +132,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Overreacted`,
-        short_name: `Overreacted`,
+        name: `postorder`,
+        short_name: `postorder`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,

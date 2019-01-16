@@ -1,11 +1,11 @@
 {
-  "name": "overreacted",
+  "name": "postorder",
   "private": true,
-  "description": "Overreacted",
+  "description": "postorder",
   "version": "1.0.0",
-  "author": "Dan Abramov <dan.abramov@me.com>",
+  "author": "Karthik Kalyanaraman <reach.kkarthik@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gaearon/overreacted.io/issues"
+    "url": "https://github.com/kakaly/postorder.xyz/issues"
   },
   "dependencies": {
     "gatsby": "^2.0.76",
@@ -43,7 +43,7 @@
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.2"
   },
-  "homepage": "https://overreacted.io",
+  "homepage": "https://postorder.xyz",
   "license": "MIT",
   "scripts": {
     "dev": "gatsby develop",
@@ -52,7 +52,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "rm -rf public && rm -rf .cache && gatsby build",
-    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) overreacted.io",
+    "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) postorder.xyz",
     "dry": "yarn build && cp now.json public/ && cd public && now",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }

@@ -10,8 +10,8 @@ import { formatReadingTime } from '../utils/helpers'
 import { rhythm, scale } from '../utils/typography'
 import { codeToLanguage, createLanguageLink } from '../utils/i18n'
 
-const GITHUB_USERNAME = 'gaearon'
-const GITHUB_REPO_NAME = 'overreacted.io'
+const GITHUB_USERNAME = 'kakaly'
+const GITHUB_REPO_NAME = 'postorder.xyz'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
     const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${
       enSlug.slice(1, enSlug.length - 1) + (lang === 'en' ? '' : '.' + lang)
     }.md`
-    const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(`https://overreacted.io${enSlug}`)}`
+    const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(`https://postorder.xyz${enSlug}`)}`
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -102,7 +102,7 @@ class BlogPostTemplate extends React.Component {
             }}
             to={'/'}
           >
-            Overreacted
+            postorder
           </Link>
         </h3>
         <Bio />
