@@ -3,8 +3,8 @@ const languages = require('./languages');
 module.exports = {
   siteMetadata: {
     title: 'Postorder',
-    author: 'Dan Abramov',
-    description: 'Personal blog by Karthik Kalyanaraman. I de-mystify concepts and ideas by doing a post-order traversal on them.',
+    author: 'Karthik Kalyanaraman',
+    description: 'Personal blog by Karthik Kalyanaraman. I write about Programming and Technology',
     siteUrl: 'https://postorder.xyz',
     social: {
       twitter: '@karthikkalyan90',
