@@ -5,8 +5,11 @@ langs: ['en']
 spoiler: There’s a twist at the end.
 ---
 
-
 Let’s cut to the chase. So, what do classes mean in JavaScript?
+
+<p align="center"> 
+<img src="./1_1.png">
+</p>
 
 To understand classes, we must dig deeper, starting from Object constructor
 
@@ -28,11 +31,17 @@ So, now that we are clear what Object constructor is used for, lets look at the 
 // Print Object's properties
 console.dir(Object)
 ```
+<p align="center"> 
+<img src="./1_2.png">
+</p>
 
 Besides the long list of properties, we also see a property called ‘prototype’. Now, this gives us a starting point for deconstructing classes in JavaScript.
 
 So, what is this ‘prototype’ property? It has a ‘constructor’ property on top of other regular properties.
 
+<p align="center"> 
+<img src="./1_3.png">
+</p>
 
 To understand its significance, let’s write a function and look into it’s properties. Remember, function is also a JavaScript Object and it inherits properties from the Object constructor.
 
@@ -42,6 +51,9 @@ function foo() {}
 console.dir(foo)
 ```
 
+<p align="center"> 
+<img src="./1_4.png">
+</p>
 
 There we go, as we expected, function foo() has a prototype property. Here goes my second spoiler,
 
@@ -65,6 +77,10 @@ var foo2 = new foo("world")
 foo2.print() // world
 ```
 
+<p align="center"> 
+<img src="./1_5.png">
+</p>
+
 What did we just do? We add class methods by appending, new method ‘print()’ directly to the prototype property of the function. But, how are we able to call ‘print()’ directly on the instances foo1 and foo2? Magic!
 
 When we call a function prefixed with ‘new’, JS pulls a dramatic heist by copying the function’s prototype property on to the instance’s __proto__ property. And what’s __proto__ property? Scroll up and look at all the images. It is also a property of all Objects in JS, which brings us to the third spoiler,
@@ -80,9 +96,17 @@ console.dir(foo1)
 foo1.print() // hello
 ```
 
+<p align="center"> 
+<img src="./1_6.png">
+</p>
+
 There we go! The instance foo1’s __proto__ now has the print() function that can be resolved when we do, foo1.print() and it works like a charm.
 
 But, WTH are classes?
+
+<p align="center"> 
+<img src="./1_7.jpeg">
+</p>
 
 Ok, we have our honest console.dir() which tells truth and nothing but the truth. Lets’ look at an example.
 
@@ -111,6 +135,14 @@ console.dir(bar)
 Final spoiler:
 
 **“foo and bar are the same!!”**
+
+<p align="center"> 
+<img src="./1_8.png">
+</p>
+
+<p align="center"> 
+<img src="./1_9.png">
+</p>
 
 **“JavaScript classes are syntactic sugar for JavaScript constructor functions which is a pseudo implementation of traditional classes by taking advantage of JavaScript’s prototype property and the prototype chain”**
 
