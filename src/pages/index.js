@@ -11,7 +11,7 @@ import { rhythm } from '../utils/typography'
 import { defaultLangKey } from '../../languages'
 
 class BlogIndex extends React.Component {
-  state = {display: 'programming'}
+  state = {display: 'Programming'}
   handler = (type) => {
     this.setState({display: type})
   }
