@@ -11,17 +11,22 @@ import { rhythm } from '../utils/typography'
 import { defaultLangKey } from '../../languages'
 
 class BlogIndex extends React.Component {
+  state = {display: 'programming'}
+  handler = (type) => {
+    this.setState({display: type})
+  }
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(
       this,
       'props.data.site.siteMetadata.description'
     )
+    const siteCategory = get(this, 'props.data.site.siteMetadata.category')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
-      .filter(({ node }) => node.fields.langKey === defaultLangKey)
+      .filter(({ node }) => node.fields.langKey === defaultLangKey && node.frontmatter.type == this.state.display)
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} category={siteCategory} handler={this.handler.bind(this)}>
         <SEO />
         <Bio />
         {posts.map(({ node }) => {
@@ -61,6 +66,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        category
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -75,6 +81,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
+            type
           }
         }
       }

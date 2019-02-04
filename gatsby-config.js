@@ -5,6 +5,7 @@ module.exports = {
     title: 'Postorder',
     author: 'Karthik Kalyanaraman',
     description: 'Personal blog by Karthik Kalyanaraman. I write about Programming and Technology',
+    category: ['Programming', 'Product'],
     siteUrl: 'https://postorder.xyz',
     social: {
       twitter: '@karthikkalyan90',
@@ -117,6 +118,7 @@ module.exports = {
                         title
                         date
                         spoiler
+                        type
                       }
                     }
                   }

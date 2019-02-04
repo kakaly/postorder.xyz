@@ -19,6 +19,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next, slug } = this.props.pageContext
     const lang = post.fields.langKey
+    const type = post.frontmatter.type
     const translations = (post.frontmatter.langs || [])
       .filter(l => l !== 'en')
 
@@ -154,6 +155,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         langs
         spoiler
+        type
       }
       fields {
         slug

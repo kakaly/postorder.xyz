@@ -3,6 +3,7 @@ title: Unpacking JavaScript Classes
 date: '2019-01-12'
 langs: ['en']
 spoiler: There’s a twist at the end.
+type: Programming
 ---
 
 Let’s cut to the chase. So, what do classes mean in JavaScript?

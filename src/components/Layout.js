@@ -2,32 +2,47 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../utils/typography'
-
 class Layout extends React.Component {
+  state = {display: 'programming'}
+
   render() {
-    const { location, title, children } = this.props
+    const { location, title, category, handler, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
-
     if (location.pathname === rootPath) {
       header = (
         <h1
           style={{
-            ...scale(1.0),
-            marginBottom: rhythm(1.5),
+            ...scale(.15),
+            marginBottom: rhythm(3.5),
             marginTop: 0,
           }}
         >
           <Link
             style={{
+              ...scale(.45),
               boxShadow: 'none',
               textDecoration: 'none',
               color: 'inherit',
+              float: `left`,
             }}
             to={'/'}
           >
             {title}
           </Link>
+          <ul style={{ float: `right`, }}>
+            {category.map((type, i)=>{
+              return (
+                <li onClick={() => handler(type)}
+                    style={{display: `inline-block`,
+                            marginRight: `1rem`,
+                            marginTop: `.5rem`,
+                            cursor: `pointer`}}
+                    key={i}>
+                  {type}
+                </li>)
+            })}
+          </ul>
         </h1>
       )
     } else {

@@ -13,7 +13,7 @@ class Bio extends React.Component {
       <div
         style={{
           display: 'flex',
-          marginBottom: rhythm(2.5),
+          marginBottom: rhythm(1.5),
         }}
       >
         <img
@@ -26,7 +26,7 @@ class Bio extends React.Component {
             height: rhythm(2),
           }}
         />
-        <p style={{ maxWidth: 350 }}>
+        <p style={{ maxWidth: 540 }}>
           Personal blog by <a href="https://mobile.twitter.com/karthikkalyan90">Karthik Kalyanaraman</a>.
           {' '}
           I&nbsp;write about Programming and Technology.
